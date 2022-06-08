@@ -1,0 +1,28 @@
+.shipment-to-board__header {
+	display: flex;
+	flex-direction: column;
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
+
+.freight-rate__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 180px;
+	height: 120px;
+	margin: auto;
+	background-color: #f8f8f8;
+}
+
+.freight-rate__header {
+	font-size: 17px;
+	font-weight: bold;
+	color: #aaadc0;
+}
+
+.freight-rate__price {
+	font-size: 25px;
+	font-weight: bold;
+	color: #6c6c6c;
+}
