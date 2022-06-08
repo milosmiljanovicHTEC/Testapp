@@ -1,17 +1,15 @@
 name: pr_comment
 
+
 on:
   pull_request:
-    branches: main
+    types: [opened, synchronize]
 
 jobs:
-  test:
+  history:
+    name: Pull Request Body
     runs-on: ubuntu-latest
+    if: startsWith(github.event.pull_request.head.ref, 'release/')
     steps:
-      - uses: mshick/add-pr-comment@v1
-        env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          message: |
-            **Hello MASTER**
-          allow-repeats: true
+      - name: Pull Request Body
+        uses: technote-space/pr-commit-body-action@v1
