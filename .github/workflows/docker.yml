@@ -1,4 +1,4 @@
-name: ci
+name: pr_comment
 
 on:
   push:
