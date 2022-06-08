@@ -1,6 +1,8 @@
 FROM node:15
 EXPOSE 3200
 WORKDIR /app
-COPY . .
+ADD package*.json .
+RUN npm install 
+ADD  . .
 RUN npm install 
 CMD ["npm","start"]
