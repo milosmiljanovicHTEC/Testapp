@@ -1,0 +1,8 @@
+.nav__link--denied {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+.low-opacity {
+	opacity: 0.5;
+}
