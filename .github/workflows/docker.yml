@@ -7,7 +7,6 @@ on:
 
 jobs:
   history:
-    name: Pull Request Body
     runs-on: ubuntu-latest
     if: startsWith(github.event.pull_request.head.ref, 'release/')
     steps:
