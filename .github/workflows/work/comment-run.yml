@@ -1,7 +1,7 @@
 name: "Comment run"
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: [ "quickfix" ]
 
 jobs:
   comment-run:
