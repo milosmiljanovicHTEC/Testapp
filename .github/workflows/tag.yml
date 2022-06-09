@@ -1,9 +1,8 @@
 name: Tag
 
-on:
-  push:
-    branches: [ "main" ]
-      runs-on: ubuntu-latest
+ on:
+  check_run:
+    types: [completed]
       
   jobs:
     steps:
