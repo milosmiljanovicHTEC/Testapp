@@ -1,0 +1,26 @@
+name: Tag
+
+on:
+  push:
+    branches: [ "main" ]
+      runs-on: ubuntu-latest
+      
+  jobs:
+    steps:
+    if: github.event.pull_request.merged == 'true'
+    run: echo 'hellp '    
+
+# jobs:
+#   Check tags:
+#    steps:
+#   - uses: actions/checkout@v2
+#   - run: |
+#       ls
+#       echo ${{ github.ref }}
+#       ref='refs/tags/v'
+#       if [[ ${{ github.ref }} == *${ref}* ]]; then
+#         v=$(echo ${{ github.ref }} | cut -d'/' -f3)
+#         echo "version tag is ${v}"
+#       else
+#         echo "There is no github tag reference, skipping"
+#       fi
