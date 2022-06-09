@@ -1,6 +1,6 @@
 name: Tag
 
- on:
+on:
   check_run:
     types: [completed]
       
