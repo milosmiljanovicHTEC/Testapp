@@ -1,15 +1,20 @@
-name: Tag
-
+name: Main
 on:
-  check_run:
-    types: [completed]
-      
+  push:
+    branches:
+      - "main"
+  pull_request:
+    branches:
+      - "main"
 jobs:
-  comment-run:
-    runs on: ubuntu-20.04
+  build:
+    runs-on: ubuntu-latest
     steps:
-    if: github.event.pull_request.merged == 'true'
-    run: echo 'hellp '    
+      - uses: actions/checkout@v2
+      - name: Test
+        run: echo "running tests"
+        run: echo "Deploying"
+        if: github.head_ref == 'main'
 
 # jobs:
 #   Check tags:
