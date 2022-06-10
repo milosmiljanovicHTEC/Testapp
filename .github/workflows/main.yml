@@ -1,7 +1,7 @@
 name: container 
 on: push
 jobs:
-  test:
+  comment:
     runs-on: ubuntu-latest
     steps:
       - uses: mshick/add-pr-comment@v1
@@ -32,7 +32,7 @@ jobs:
          tags: milosmi9/nextwebapp:latest, milosmi9/nextwebapp:${{github.run_number}}
 
   production-deploy:
-    if: github.repository == 'milosmiljanovic/testapp'
+    if: github.repository == 'milosmiljanovic/stp'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
