@@ -1,6 +1,19 @@
 name: container 
 on: push
-jobs: 
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            **Hello**
+            🌏
+            !
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          allow-repeats: false 
+
   build-container:
     runs-on: ubuntu-latest
     steps:
@@ -17,3 +30,13 @@ jobs:
          context: .
          push: true
          tags: milosmi9/nextwebapp:latest, milosmi9/nextwebapp:${{github.run_number}}
+
+  production-deploy:
+    if: github.repository == 'milosmiljanovic/stp'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
