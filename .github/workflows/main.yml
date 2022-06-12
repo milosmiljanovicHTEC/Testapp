@@ -31,6 +31,12 @@ jobs:
          context: .
          push: true
          tags: milosmi9/nextwebapp:latest, milosmi9/nextwebapp:${{github.run_number}}
+      - name: Docker pull
+        run : docker pull  milosmi9/nextwebapp:latest
+         
+      - name: Start containers
+        run: docker-compose -f "docker-compose.yml" up -d --build         
+docker pull HOSTNAME/OWNER/REPOSITORY/IMAGE_NAME:TAG_NAME         
 
   production-deploy:
     if: github.repository == 'milosmiljanovic/stp'
