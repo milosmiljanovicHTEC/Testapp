@@ -1,0 +1,68 @@
+version: '3.4'
+
+services:
+ 
+  # EvennonAPI:
+  #   image: ${DOCKER_REGISTRY-}evennonapi
+  #   restart: always
+  #   container_name: evennonapi
+  #   build:
+  #     context: .
+  #     dockerfile: ./DockerfileB
+  #   ports:
+  #     - 5000:80
+  #   environment:
+  #       - ASPNETCORE_ENVIRONMENT=Development
+  #       - "mssqlconnection:connectionString=Data Source=mssqldb;Initial Catalog=EvennonDB;User Id=sa;Password=SwN12345678" 
+  #       - "Twilio:AccountSid=AC9e600642d7ddad396c3774b91f84b8d5"
+  #       - "Twilio:AuthToken=cc1032b8e3a396ee6ad35c4ddafd696c"
+  #       - "Twilio:ServiceId=MGd7ba426b7ef2683f8373273dc79b53c9"
+  #       - "EmailSettings:Domain=smtp.gmail.com"
+  #       - "EmailSettings:Port=587"
+  #       - "EmailSettings:UsernameEmail=magnitude.test@vegait.rs"
+  #       - "EmailSettings:UsernamePassword=Pass4Vega"
+  #       - "EmailSettings:FromEmail=magnitude.test@vegait.rs"
+  #       - "MapSettings:ApiKeyGoogle=AIzaSyAiWkKZD84ZAQL1g36YHkOPTHlt_2Z_-wo"
+  #       - "MapSettings:ApiKeyMiler=C1FC45369696ED459AB16CE4E7FCC15A"
+  #       - "MapSettings:BaseUrlGoogle=https://maps.googleapis.com/maps/api/staticmap?"
+  #       - "MapSettings:BaseUrlMiler=https://pcmiler.alk.com/apis/rest/v1.0/service.svc/"
+  #       - "jwt:secretKey=Ap1XrXLS8iW4tmMZE2xVPBk0DWa9qfQrTQiLc8tTxjsC1w2K390lnMDfiruT"
+  #   depends_on:
+  #       - mssqldb
+  #   networks:
+  #   - mynetwork
+
+  # mssqldb:
+  #   container_name: mssqldb
+  #   image: mcr.microsoft.com/mssql/server
+  #   environment:
+  #       SA_PASSWORD: "SwN12345678"
+  #       ACCEPT_EULA: "Y"
+  #       MSSQL_PID: Express
+  #   ports:
+  #       - "1433:1433"   
+  #   volumes:
+  #       - evennon:/var/opt/mssql  
+  #   networks:
+  #   - mynetwork
+
+
+
+  evennon-web:
+    #image: ${DOCKER_REGISTRY-}evennonweb
+    stdin_open: true
+    tty: true
+    restart: always
+    container_name: evennonweb
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 3200:3200
+    environment:
+          - ASPNETCORE_ENVIRONMENT=Development
+# volumes:
+#    evennon:
+
+# networks:
+#   mynetwork:
