@@ -1,0 +1,15 @@
+name: production 
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:  
+jobs:
+
+  build-container:
+    runs-on: self-hosted
+    steps:
+      - name: Start containers
+        run: chmod +x runner.sh && ./runner.sh         
+
