@@ -31,7 +31,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: cd ~/evennon && git pull origin/develop && ./runner.sh development
+          script: cd ~/evennon && git pull develop && ./runner.sh development
           
 
   # build-container:
