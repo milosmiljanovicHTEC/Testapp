@@ -1,3 +1,3 @@
 FROM ubuntu/apache2
-EXPOSE 8080
+EXPOSE 80
 COPY index.html /var/www/html
