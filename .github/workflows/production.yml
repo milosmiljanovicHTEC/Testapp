@@ -25,7 +25,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: cd ~/evennon && git pull main && ./runner.sh production
+          script: cd ~/evennon && pwd &&git pull main && ./runner.sh production
 
   # build-container:
   #   runs-on: self-hosted
