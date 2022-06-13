@@ -3,7 +3,7 @@ version: '3.4'
 services:
  
   evennon-web:
-    image: milosmi9/nextwebapp:latest
+    # image: ubuntu/apache2
     stdin_open: true
     tty: true
     restart: always
