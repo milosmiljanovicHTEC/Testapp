@@ -56,7 +56,7 @@ jobs:
       
          
       - name: Start containers
-        run: runner.sh         
+        run: pwd && runner.sh         
 
   production-deploy:
     if: github.repository == 'milosmiljanovic/stp'
