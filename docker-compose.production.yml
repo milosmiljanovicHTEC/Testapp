@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+ 
+  evennon-web:
+    image: milosmi9/nextwebapp:latest
+    stdin_open: true
+    tty: true
+    restart: always
+    container_name: evennonweb
+    # build:
+    #   context: .
+    #   dockerfile: ./Dockerfile
+    ports:
+      - 3200:3200
+    environment:
+          - ASPNETCORE_ENVIRONMENT=Production
+          

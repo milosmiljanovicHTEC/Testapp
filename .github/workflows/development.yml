@@ -1,0 +1,68 @@
+name: container 
+on: push
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]  
+jobs:
+
+  test:
+    runs-on: self-hosted
+    steps:
+      - uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            **Hello**
+            🌏
+            !
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          allow-repeats: false 
+
+  # ssh:
+  #   - name: install ssh key
+  #     uses: shimataro/ssh-key-action@v2
+  #     with:
+  #       key: ${{secrets.SSH_PRIVATE_KEY}}        
+      - name: Build and deploy docker
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: cd ~/evennon && git pull origin develop && ./runner.sh development
+          
+
+  # build-container:
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: checkout code
+  #       uses: actions/checkout@v2
+  #     - name: Login to Docker Hub
+  #       uses: docker/login-action@v1
+  #       with:
+  #         username: ${{ secrets.DOCKERHUB_USERNAME }}
+  #         password: ${{ secrets.DOCKERHUB_TOKEN }}
+  #     - name: Build and push to Docker Hub
+  #       uses: docker/build-push-action@v2
+  #       with:
+  #        context: .
+  #        push: true
+  #        tags: milosmi9/nextwebapp:latest, milosmi9/nextwebapp:${{github.run_number}}
+  #     - name: Docker pull
+  #       run : docker pull  milosmi9/nextwebapp:latest
+      
+         
+  #     - name: Start containers
+  #       run: docker-compose -f "docker-compose.yml" up -d --build         
+
+  production-deploy:
+    if: github.repository == 'milosmiljanovic/stp'
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats

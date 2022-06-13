@@ -1,5 +1,9 @@
 name: container 
 on: push
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]  
 jobs:
 
   test:
@@ -14,6 +18,14 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: false 
+      - name: Build and deploy docker
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: cd ~/evennon && git pull origin main && ./runner.sh production
 
   build-container:
     runs-on: self-hosted
