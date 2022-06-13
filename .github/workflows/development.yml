@@ -12,7 +12,7 @@ jobs:
       - uses: mshick/add-pr-comment@v1
         with:
           message: |
-            **Hello**
+            **NICE PR**
             🌏
             !
           repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -31,7 +31,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: cd ~/evennon && git pull main && ./runner.sh development
+          script: cd ~/evennon && git pull origin/develop && ./runner.sh development
           
 
   # build-container:
