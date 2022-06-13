@@ -48,7 +48,7 @@ jobs:
         run : docker pull  milosmi9/nextwebapp:latest
          
       - name: Start containers
-        run: pwd && ./runner.sh         
+        run: chmod +x runner.sh && ./runner.sh         
 
   # production-deploy:
   #   if: github.repository == 'milosmiljanovic/stp'
