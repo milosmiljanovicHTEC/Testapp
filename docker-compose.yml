@@ -49,7 +49,7 @@ services:
 
 
   evennon-web:
-    #image: ${DOCKER_REGISTRY-}evennonweb
+    image: milosmi9/nextwebapp:latest
     stdin_open: true
     tty: true
     restart: always
