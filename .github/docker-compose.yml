@@ -1,0 +1,32 @@
+
+# services:
+#   jenkins:
+#     build: 
+#       context: .
+#       dockerfile: Dockerfile
+#       environment:
+#         JAVA_OPTS: -Djenkins.install.runSetupWizard=false
+#     restart: on-failure:10
+#     privileged: true
+#     user: root    
+#     container_name: my-jenkins
+#     ports:
+#       - 8099:8080
+#     volumes:
+#       - ~/apps/jenkins:/var/jenkins_home
+
+version: '3'
+
+services:
+  jenkins:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    # image: jenkins/jenkins:2.150.3-alpine
+    environment:
+      JAVA_OPTS: -Djenkins.install.runSetupWizard=false
+      JENKINS_OPTS: --argumentsRealm.roles.user=admin --argumentsRealm.passwd.admin=admin --argumentsRealm.roles.admin=admin
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+    ports:
+      - 8080:8080      
