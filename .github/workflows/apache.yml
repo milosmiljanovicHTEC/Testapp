@@ -1,4 +1,4 @@
-name: production 
+name: Jenkins 
 on: 
   push:
     branches: [ main ]
@@ -10,6 +10,8 @@ jobs:
   build-container:
     runs-on: self-hosted
     steps:
+      - name: Get data
+      - run: git pull
       - name: Start containers
         run: docker-compose up
         #run: chmod +x runner.sh && ./runner.sh         
