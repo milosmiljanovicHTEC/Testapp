@@ -10,6 +10,8 @@ jobs:
   build_jenkins_container:
     runs-on: self-hosted
     steps:
+      - name: Place
+        run: pwd
       - name: Get data
         run: git pull
       - name: Start containers
