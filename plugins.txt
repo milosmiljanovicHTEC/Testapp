@@ -1,2 +1,3 @@
 git:latest
 github-branch-source:latest
+workflow-aggregator:581.v0c46fa_697ffd
