@@ -11,5 +11,6 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Start containers
-        run: chmod +x runner.sh && ./runner.sh         
+        run: docker-compose up
+        #run: chmod +x runner.sh && ./runner.sh         
 
