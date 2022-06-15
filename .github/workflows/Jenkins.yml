@@ -7,12 +7,12 @@ on:
   workflow_dispatch:  
 jobs:
 
-  build-container:
+  build_jenkins_container:
     runs-on: self-hosted
     steps:
       - name: Get data
         run: git pull
       - name: Start containers
-        run: docker-compose up
+        run: docker-compose up --build --remove-orphans -d
         #run: chmod +x runner.sh && ./runner.sh         
 
