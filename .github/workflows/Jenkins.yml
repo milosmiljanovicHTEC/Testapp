@@ -15,7 +15,7 @@ jobs:
       - name: Get data
         run: git pull
       - name: Start containers
-        run: docker-compose up --build && docker system prune -a
+        run: docker-compose up --build -d && docker system prune -a
       - name: Get output
         run: curl http://52.203.227.176:8080/job/testerosa/lastBuild/consoleText |sed -n '9'p > output.txt
       - name: Display output
