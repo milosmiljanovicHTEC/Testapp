@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+jenkins_home
 
 # testing
 /coverage
