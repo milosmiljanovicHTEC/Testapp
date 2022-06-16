@@ -24,9 +24,15 @@ jobs:
   Get_output:
     runs-on: self-hosted
     steps:
-      - uses: mshick/add-prc-comment@v1
-      - name: Display output
-      - run: echo "$(<output.txt )
+      - uses: mshick/add-pr-comment@v1
+        with: 
+          run: echo "$(<output.txt )
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          allow-repeats: false           
+#             - run: 
+#       - name: Display output
+#       - run: echo "$(<output.txt )
            
   
         
