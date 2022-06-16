@@ -20,5 +20,16 @@ jobs:
         run: curl http://52.203.227.176:8080/job/testerosa/lastBuild/consoleText |sed -n '9'p > output.txt
       - name: Display output
         run: echo "$(<output.txt )"
+  
+  Get_output:
+    runs-on: self-hosted
+    steps:
+      - uses: mshick/add-prc-comment@v1
+      - name: Display output
+      - run: echo "$(<output.txt )
+           
+  
+        
+        
         #run: chmod +x runner.sh && ./runner.sh         
 
