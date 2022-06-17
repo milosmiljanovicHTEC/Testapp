@@ -1,49 +1,21 @@
-name: Jenkins 
-on: 
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:  
-jobs:
 
-  build_jenkins_container:
-    runs-on: self-hosted
+
+name: Delete old workflow runs
+on:
+  schedule:
+    - cron: '40 10 * * *'
+# Run monthly, at 00:00 on the 1st day of month.
+
+jobs:
+  del_runs:
+    runs-on: ubuntu-latest
     steps:
-      - name: Place
-        run: pwd
-      - name: Get data
-        run: git pull
-      - name: Start containers
-        run: docker-compose up --build -d 
-      - name: Remove containers
-        run: docker system prune -a
-        
-  Jenkins:
-    runs-on: self-hosted
-    steps:
-      - name: Run Jenkins
-        run: curl -X POST -u ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }} http://jenkinstestnow.ddns.net/job/testerosa/build
-      - name: Get output
-        run: curl http://52.203.227.176:8080/job/testerosa/lastBuild/consoleText |sed -n '9'p > output.txt
-      - name: Display output
-        run: echo "$(<output.txt )"
-  
-  Get_output:
-    runs-on: self-hosted
-    steps:
-      - uses: mshick/add-pr-comment@v1
-        with: 
-          run: echo "$(<output.txt )
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]'
-          allow-repeats: false           
-#             - run: 
-#       - name: Display output
-#       - run: echo "$(<output.txt )
-           
-  
-        
-        
-        #run: chmod +x runner.sh && ./runner.sh         
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 30
+          keep_minimum_runs: 6
+
 
