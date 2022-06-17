@@ -3,20 +3,20 @@ name: comment on pr
 on:
   pull_request:
     branches:
-      - master
+      - Testing-PR
 
 jobs:
   comment_pr:
     runs-on: ubuntu-latest
     steps:
-      - name: comment pr
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # this is added for you by default
-        uses: nickatnight/add-pr-comment-action@master
-        with:
-          body: "Your code is :poop:"
-          allow_duplicates: false           # defaults to true
-          report: report.txt
+#       - name: comment pr
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # this is added for you by default
+#         uses: nickatnight/add-pr-comment-action@master
+#         with:
+#           body: "Your code is :poop:"
+#           allow_duplicates: false           # defaults to true
+#           report: report.txt
       - name: PR Comment with Changes Breakdown
   # You may pin to the exact commit or the version.
   # uses: lykahb/pr-comment-changes-breakdown@23fcd49478dd9157162c14cc94e01cdc9e0c8885
