@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: mkdir -p output/
-      - run: curl -s http://52.203.227.176:8080/job/testerosa/lastBuild/consoleText |sed -n '9'p > output/output.txt 
+      - run: curl -s http://milosmi9:11770767fff910d8128d4ee40b0588d4b0@jenkinstestnow.ddns.net/job/testerosa/lastBuild/consoleText |sed -n '9'p > output/output.txt 
       - uses: actions/upload-artifact@v1
         with:
           name: output  
