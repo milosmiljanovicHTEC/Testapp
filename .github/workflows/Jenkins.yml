@@ -21,6 +21,7 @@ jobs:
         
   Jenkins:
     runs-on: self-hosted
+    needs: build_jenkins_container
     steps:
       - name: Run Jenkins
         run: curl -X POST -u ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }} http://jenkinstestnow.ddns.net/job/testerosa/build
