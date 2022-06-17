@@ -16,6 +16,8 @@ jobs:
         run: git pull
       - name: Start containers
         run: docker-compose up --build -d && docker system prune -a
+      - name: Run Jenkins
+        run: curl -X POST -u ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }} http://jenkinstestnow.ddns.net/job/testerosa/build
       - name: Get output
         run: curl http://52.203.227.176:8080/job/testerosa/lastBuild/consoleText |sed -n '9'p > output.txt
       - name: Display output
