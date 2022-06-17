@@ -3,7 +3,7 @@ name: comment on pr
 on:
   pull_request:
     branches:
-      - master
+      - Testing-PR
 
 jobs:
   comment_pr:
