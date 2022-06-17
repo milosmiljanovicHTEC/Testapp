@@ -15,7 +15,13 @@ jobs:
       - name: Get data
         run: git pull
       - name: Start containers
-        run: docker-compose up --build -d && docker system prune -a
+        run: docker-compose up --build -d 
+      - name: Remove containers
+        run: docker system prune -a
+        
+  Jenkins:
+    runs-on: self-hosted
+    steps:
       - name: Run Jenkins
         run: curl -X POST -u ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }} http://jenkinstestnow.ddns.net/job/testerosa/build
       - name: Get output
