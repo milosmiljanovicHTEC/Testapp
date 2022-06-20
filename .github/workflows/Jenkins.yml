@@ -1,7 +1,5 @@
 name: Jenkins 
 on: 
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:  
@@ -23,10 +21,6 @@ jobs:
     steps:
       - name: Run Jenkins
         run: curl -X POST -u ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }} http://jenkinstestnow.ddns.net/job/testerosa/build
-      - name: Get output
-        run: curl http://52.203.227.176:8080/job/testerosa/lastBuild/consoleText |sed -n '9'p > output.txt
-      - name: Display output
-        run: echo "$(<output.txt )"
   
   Create_comment_for_PR:
     name: PR_comment
