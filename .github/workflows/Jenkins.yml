@@ -7,6 +7,9 @@ jobs:
 
   build_jenkins_container:
     runs-on: self-hosted
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    
     steps:
       - name: Get data
         run: git pull
@@ -14,6 +17,14 @@ jobs:
         run: docker-compose up --build -d 
       - name: Remove containers
         run: docker system prune -a
+      - name: Slack Notification
+        uses: act10ns/slack@v1
+        with: 
+         status: starting
+         channel: '#test'
+         message: Starting Build and Deploy...
+        if: always()        
+        
         
   Jenkins:
     runs-on: self-hosted
