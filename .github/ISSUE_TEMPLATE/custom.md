@@ -37,7 +37,7 @@ assignees: ''
 | -- | -- | -- | -- |
 | Tex1 |Text1 | Text1  |Text1  |
 | <em>Text2</em>  | <em>Text2</em>  | <em>Text2</em>  | <em>Text2</em>  |
-| <body bgcolor=”#800000"> |Text3  | Text3  | Text3  |
+| <p style="background-color:Tomato;">Lorem ipsum...</p> |Text3  | Text3  | Text3  |
 
 
 </div>
