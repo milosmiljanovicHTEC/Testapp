@@ -14,8 +14,7 @@ jobs:
           issue-number: 48
           body:
           with:
-          markdown:
-            This is a multi-line test comment
+          markdown: custom.md
             - With GitHub **Markdown** :sparkles:
             - Created by [create-or-update-comment][1]
             [1]: https://github.com/peter-evans/create-or-update-comment
