@@ -7,14 +7,14 @@ jobs:
      Comment_issue:
       runs-on: ubuntu-latest
       steps:
+      - name: Render template
+        id: template
+        uses: chuhlomin/render-template@v1.4
+        with:
+          template: .github/ISSUE_TEMPLATE/custom.md
+
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v2
         with:
           issue-number: 48
-          body: |
-            This is a multi-line test comment
-            - With GitHub **custom.md** :sparkles:
-            - Created by [create-or-update-comment][1]
-
-            [1]: https://github.com/peter-evans/create-or-update-comment
-          reactions: '+1'
+          body: ${{ steps.template.outputs.result }}
