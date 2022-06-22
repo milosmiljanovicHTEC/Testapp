@@ -12,6 +12,9 @@ jobs:
         uses: chuhlomin/render-template@v1.4
         with:
           template: ./README.md
+      - name : test
+        run: pwd
+
 
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v2
