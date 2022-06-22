@@ -11,7 +11,7 @@ jobs:
         id: template
         uses: chuhlomin/render-template@v1.4
         with:
-          template: .github/ISSUE_TEMPLATE/custom.md
+          template: .github/custom.md
 
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v2
