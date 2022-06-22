@@ -9,16 +9,6 @@ jobs:
       steps:
       - uses: actions/checkout@v2
 
-#       - name : test
-#         run: pwd && ls
-#       - name: list
-#         run: ls
-#       - name: Render template
-#         id: template
-#         uses: chuhlomin/render-template@v1.4
-#         with:
-#           template: README.md
-
       - name: Create Issue From File
         uses: peter-evans/create-issue-from-file@v4
         with:
@@ -28,8 +18,3 @@ jobs:
             report
             automated issue
 
-#       - name: Create comment
-#         uses: peter-evans/create-or-update-comment@v2
-#         with:
-#           issue-number: 48
-#           body: ${{ steps.template.outputs.result }}
