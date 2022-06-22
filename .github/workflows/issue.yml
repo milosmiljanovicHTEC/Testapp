@@ -9,6 +9,8 @@ jobs:
       steps:
       - name : test
         run: pwd && ls
+      - name: list
+        run: ls
       - name: Render template
         id: template
         uses: chuhlomin/render-template@v1.4
