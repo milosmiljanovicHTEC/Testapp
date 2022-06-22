@@ -7,13 +7,14 @@ jobs:
      Comment_issue:
       runs-on: ubuntu-latest
       steps:
+      - name : test
+        run: pwd
       - name: Render template
         id: template
         uses: chuhlomin/render-template@v1.4
         with:
           template: ./README.md
-      - name : test
-        run: pwd
+
 
 
       - name: Create comment
