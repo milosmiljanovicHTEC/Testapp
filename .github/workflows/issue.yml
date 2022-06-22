@@ -7,6 +7,8 @@ jobs:
      Comment_issue:
       runs-on: ubuntu-latest
       steps:
+      - uses: actions/checkout@v2
+
 #       - name : test
 #         run: pwd && ls
 #       - name: list
