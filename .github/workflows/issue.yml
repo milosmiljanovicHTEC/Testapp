@@ -10,8 +10,8 @@ jobs:
       steps:
       - uses: actions/checkout@v2
       - name: Get script
-        run: curl -s 'https://${{ secrets.GITHUB_TOKEN }}@raw.githubusercontent.com/milosmi9/Testapp/table/Read.sh' > Reeeeeead.sh 
-            chmod +x Reeeeeead.sh && pwd && ls -la
+#         run: curl -s 'https://${{ secrets.GITHUB_TOKEN }}@raw.githubusercontent.com/milosmi9/Testapp/table/Read.sh' > Reeeeeead.sh chmod +x Reeeeeead.sh &&
+        run: pwd && ls -la
       - name: Create Issue From File
         uses: peter-evans/create-issue-from-file@v4
         with:
