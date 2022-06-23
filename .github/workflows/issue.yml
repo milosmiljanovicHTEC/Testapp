@@ -15,7 +15,7 @@ jobs:
         uses: peter-evans/create-issue-from-file@v4
         with:
           title: An example issue
-          content-filepath: README.md
+          content-filepath: output.md
           labels: |
             report
             automated issue
