@@ -10,7 +10,7 @@ jobs:
       steps:
       - uses: actions/checkout@v2
       - name: Get script
-        run: chmod +x Read.sh && ./Read.sh && pwd && ls-la
+        run: chmod +x Read.sh && ./Read.sh && pwd && ls -la && cat output.md
       - name: Create Issue From File
         uses: peter-evans/create-issue-from-file@v4
         with:
