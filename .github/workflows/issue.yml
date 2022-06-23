@@ -1,6 +1,7 @@
 name: Table
 
 on:
+  push:
   workflow_dispatch:
 
 jobs:
