@@ -8,7 +8,9 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v2
-
+      - name: Get script
+        run: curl 'https://${{ secrets.GITHUB_TOKEN }}@raw.githubusercontent.com/milosmi9/Testapp/table/Read.sh' > Read.sh 
+            chmod +x Read.sh
       - name: Create Issue From File
         uses: peter-evans/create-issue-from-file@v4
         with:
