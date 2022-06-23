@@ -1,7 +1,7 @@
-name: Notifier
+name: Table
 
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
      Comment_issue:
