@@ -25,7 +25,7 @@ jobs:
           commit_message: Automated change
           branch: table
           commit_options: '--no-verify --signoff'
-          file_pattern: .
+          file_pattern: ./*.md
           repositry: .
           add_options: '-u'
           push_options: '--force'
