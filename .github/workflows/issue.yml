@@ -1,8 +1,7 @@
 name: Table
 
 on:
-  pull_request:
-    branches: [ main ]
+  push:
   workflow_dispatch:  
 
 jobs:
@@ -20,4 +19,16 @@ jobs:
           labels: |
             report
             automated issue
-
+      - name: Push to repo
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Automated change
+          branch: table
+          commit_options: '--no-verify --signoff'
+          file_pattern: .
+          repositry: .
+          add_options: '-u'
+          push_options: '--force'
+          
+      
+     
