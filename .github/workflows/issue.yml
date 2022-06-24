@@ -24,7 +24,7 @@ jobs:
         uses: peter-evans/create-issue-from-file@v4
         with:
           title: An example issue
-          content-filepath: ls -lrt | tail -1
+          content-filepath: output.md
           labels: |
             report
             automated issue
