@@ -28,7 +28,7 @@ jobs:
           file_pattern: ./*.md
           git add: .
           repositry: .
-          add_options: '-u'
+          add_options: .
           push_options: '--force'
           
           
