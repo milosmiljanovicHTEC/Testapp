@@ -11,26 +11,23 @@ jobs:
       - uses: actions/checkout@v2
       - name: Get script
         run: chmod +x Read.sh && ./Read.sh && pwd && ls -la && cat output.md
-      - name: Create Issue From File
-        uses: peter-evans/create-issue-from-file@v4
-        with:
-          title: An example issue
-          content-filepath: output.md
-          labels: |
-            report
-            automated issue
       - name: Push to repo
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Automated change
           branch: table
           commit_options: '--no-verify --signoff'
-          file_pattern: ./*.md
-          git add: .
           repositry: .
           add_options: .
           push_options: '--force'
-          
+      - name: Create Issue From File
+        uses: peter-evans/create-issue-from-file@v4
+        with:
+          title: An example issue
+          content-filepath: ls -lrt | tail -1
+          labels: |
+            report
+            automated issue
           
       
      
