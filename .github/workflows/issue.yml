@@ -26,6 +26,7 @@ jobs:
           branch: table
           commit_options: '--no-verify --signoff'
           file_pattern: ./*.md
+          git add: .
           repositry: .
           add_options: '-u'
           push_options: '--force'
