@@ -11,6 +11,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Get script
         run: chmod +x Read.sh && ./Read.sh && pwd && ls -la && cat output.md
+      - name: shuffle 
+        run: chmod +x tst.awk && awk -f tst.awk output.md >> new.md
       - name: Push to repo
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
@@ -24,7 +26,7 @@ jobs:
         uses: peter-evans/create-issue-from-file@v4
         with:
           title: An example issue
-          content-filepath: output.md
+          content-filepath: new.md
           labels: |
             report
             automated issue
