@@ -5,5 +5,5 @@
 #    
 #}
 BEGIN { srand(seed) }
-{ print $0, r(), r() }
+{ print $0, r() }
 function r() { return rand()  / 1000 }
