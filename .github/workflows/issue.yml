@@ -9,10 +9,10 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v2
-      - name: Get script
-        run: chmod +x Read.sh && ./Read.sh && pwd && ls -la && cat output.md
       - name: shuffle 
-        run: chmod +x tst.awk && awk -f tst.awk output.md >> new.md
+        run: chmod +x tst.awk && awk -f tst.awk README.md >> new.md
+      - name: Get script
+        run: chmod +x Read.sh && ./Read.sh && pwd && ls -la && cat new.md
       - name: Push to repo
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
