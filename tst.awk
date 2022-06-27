@@ -6,4 +6,4 @@
 #}
 BEGIN { srand(seed) }
 { print $0, r(), r() }
-function r() { return rand() * 100001 / 1000 }
+function r() { return rand()  / 1000 }
