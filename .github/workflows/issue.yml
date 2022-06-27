@@ -21,7 +21,7 @@ jobs:
           commit_options: '--no-verify --signoff'
           repositry: .
           add_options: .
-          push_options: '--force'
+          push_options: '--force-with-lease'
       - name: Create Issue From File
         uses: peter-evans/create-issue-from-file@v4
         with:
