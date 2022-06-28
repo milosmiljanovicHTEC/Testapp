@@ -19,7 +19,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Automated change
-          branch: precent
+          branch: table
           commit_options: '--no-verify --signoff'
           repositry: .
           add_options: .
