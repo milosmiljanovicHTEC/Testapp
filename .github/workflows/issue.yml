@@ -7,9 +7,9 @@ jobs:
      Comment_issue:
       runs-on: ubuntu-latest
       steps:
-      - uses: actions/checkout@v2
-      - name: shuffle 
-        run: chmod +x tst.awk && awk -f tst.awk README.md > new.md
+ #     - uses: actions/checkout@v2
+ #     - name: shuffle 
+ #       run: chmod +x tst.awk && awk -f tst.awk README.md > new.md
 #      - name: Get script
 #        run: chmod +x Read.sh && ./Read.sh && pwd && ls -la && cat new1.md
       - name: Precentage
