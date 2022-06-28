@@ -13,6 +13,8 @@ jobs:
         run: chmod +x tst.awk && awk -f tst.awk README.md > new.md
       - name: Get script
         run: chmod +x Read.sh && ./Read.sh && pwd && ls -la && cat new1.md
+      - name: Precentage
+        run: chmod +x Precentage.sh && Precentage.sh && cat new1.md
       - name: Push to repo
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
@@ -26,7 +28,7 @@ jobs:
         uses: peter-evans/create-issue-from-file@v4
         with:
           title: An example issue
-          content-filepath: new1.md, plugins.txt
+          content-filepath: new1.md
           labels: |
             report
             automated issue
