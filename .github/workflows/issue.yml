@@ -26,7 +26,7 @@ jobs:
         uses: peter-evans/create-issue-from-file@v4
         with:
           title: An example issue
-          content-filepath: new1.md
+          content-filepath: new1.md, plugins.txt
           labels: |
             report
             automated issue
