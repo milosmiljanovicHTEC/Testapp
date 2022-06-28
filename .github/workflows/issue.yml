@@ -8,7 +8,7 @@ jobs:
      Comment_issue:
       runs-on: ubuntu-latest
       steps:
- #     - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
  #     - name: shuffle 
  #       run: chmod +x tst.awk && awk -f tst.awk README.md > new.md
 #      - name: Get script
