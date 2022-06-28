@@ -1,10 +1,10 @@
 ```diff
-Undifined character
-Undifined character
-!|   21 | 771 |
-@@|  406 | 260 | @@
--|  110 | 243
-@@|  261 | 141 | @@
-Undifined character
-@@|  743 | 240 | @@
-Undifined character
+Numbers are equal
+Numbers are equal
+@@|  977 | 506 | @@
+@@|  658 | 236 | @@
+@@|  361 | 197 @@
+@@|  266 | 125 | @@
+@@|  950 | 340 @@
+@@|  541 | 407 | @@
+@@|  437 | 59 | @@
