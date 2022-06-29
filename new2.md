@@ -1,7 +1,7 @@
 ```diff
-@@| 60     | 8    | @@
+PREFIX| 60     | 8    |SUFFIX
 -| 7      |   21 |
-@@| 14     |   6  | @@
+PREFIX| 14     |   6  |SUFFIX
 !| 1      | 556  |
-@@| 28     |  9   | @@
-@@| 800    |  8   | @@
+PREFIX| 28     |  9   |SUFFIX
+PREFIX| 800    |  8   |SUFFIX
