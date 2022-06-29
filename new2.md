@@ -1,6 +1,7 @@
 ```diff
-Numbers are equal
-@@| 63    | 30     | @@
-Numbers are equal
--| 15    | 38     |
-Numbers are equal
+@@| 60     | 8    | @@
+-| 7      |   21 |
+@@| 14     |   6  | @@
+!| 1      | 556  |
+@@| 28     |  9   | @@
+@@| 800    |  8   | @@
