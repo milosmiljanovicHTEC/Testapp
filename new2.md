@@ -1,8 +1,6 @@
 ```diff
-!| 5  | 600|    
-@@| 600  | 8 |    @@|
--| 7 | 21 |     
-@@| 14 | 6 |     @@|
-!| 1  | 556|     
--| 2  |  9 |   
-@@| 800  |  8 |    @@|
+Numbers are equal
+@@| 63    | 30     | @@
+Numbers are equal
+-| 15    | 38     |
+Numbers are equal
