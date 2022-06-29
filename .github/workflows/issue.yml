@@ -28,7 +28,7 @@ jobs:
         uses: peter-evans/create-issue-from-file@v4
         with:
           title: An example issue
-          content-filepath: new2.md
+          content-filepath: new1.md
           labels: |
             report
             automated issue
