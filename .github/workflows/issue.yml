@@ -7,7 +7,7 @@ on:
 jobs:
 
     validate-environment:
-      uses: ./.github/workflows/logs.yml
+      uses: milosmiljanovic/Testapp/.github/workflows/logs.yml
       with:
        username: mona 
     Comment_issue:
