@@ -4,6 +4,8 @@ on:
   workflow_call:
     inputs:
       days_old:
+       type: number
+       required: true
 
 jobs:
   clean-logs:
