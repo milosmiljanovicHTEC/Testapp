@@ -14,7 +14,7 @@ jobs:
       - name: Get script
         run: chmod +x Read.sh && ./Read.sh && pwd && ls -la && cat new1.md
       - name: Precentage
-        run: echo "%%precentag%%" >> new1.md
+        run: echo "%%precentage%%" >> new1.md
       - name : Precentage calculate  
         run: chmod +x Precentage.sh && ./Precentage.sh && cat new2.md
       - name: Push to repo
