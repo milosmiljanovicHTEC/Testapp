@@ -8,7 +8,6 @@ jobs:
      Workflow_call:
       runs-on: ubuntu-latest
       steps:
-      - uses: actions/checkout@v2
       - uses: milosmiljanovic/Testapp/.github//workflows/logs.yml@main
         with:  
           days_old: 1
