@@ -9,7 +9,7 @@ jobs:
     validate-environment:
       uses: milosmiljanovic/Testapp/.github/workflows/logs.yml@main
       with:
-       username: mona 
+       days_old: 7 
     Comment_issue:
       runs-on: ubuntu-latest
       steps:
