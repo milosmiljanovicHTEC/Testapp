@@ -5,13 +5,12 @@ on:
   workflow_dispatch:  
 
 jobs:
-     Workflow_call:
-      runs-on: ubuntu-latest
-      steps:
-      - uses: milosmiljanovic/Testapp/.github//workflows/logs.yml@main
-        with:  
-          days_old: 1
-     Comment_issue:
+
+    validate-environment:
+      uses: ./.github/workflows/logs.yml
+      with:
+       username: mona 
+    Comment_issue:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v2
