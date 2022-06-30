@@ -1,6 +1,7 @@
 name: Clean Workflow Logs
 
 on:
+  workflow_dispatch:
   workflow_call:
     inputs:
       days_old:
