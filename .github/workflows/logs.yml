@@ -4,9 +4,6 @@ on:
   workflow_call:
     inputs:
       days_old:
-        description: "The amount of days old to delete"
-        default: "7"
-        required: false
 
 jobs:
   clean-logs:
