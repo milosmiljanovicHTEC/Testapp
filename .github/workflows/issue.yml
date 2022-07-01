@@ -7,10 +7,7 @@ on:
 jobs:
 
     Delete_logs:
-      uses: milosmiljanovic/Testapp/.github/workflows/logs.yml@main
-      with:
-       days_old: 0
-      secrets: inherit
+      uses: milosmiljanovic/Testapp/.github/workflows/Jenkins.yml@main
     Comment_issue:
       runs-on: ubuntu-latest
       steps:
