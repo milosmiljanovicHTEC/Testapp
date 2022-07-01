@@ -10,7 +10,7 @@ jobs:
       uses: milosmiljanovic/Testapp/.github/workflows/logs.yml@main
       with:
        days_old: 0
-       secrets: inherit
+      secrets: inherit
     Comment_issue:
       runs-on: ubuntu-latest
       steps:
