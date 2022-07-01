@@ -6,7 +6,7 @@ on:
 
 jobs:
 
-    validate-environment:
+    Delete_logs:
       uses: milosmiljanovic/Testapp/.github/workflows/logs.yml@main
       with:
        days_old: 0
