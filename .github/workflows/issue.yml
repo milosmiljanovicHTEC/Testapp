@@ -10,7 +10,6 @@ jobs:
       uses: milosmiljanovic/Testapp/.github/workflows/logs.yml@main
       with:
        days_old: 0
-       type: number
        description: "The amount of days old to delete"
        default: 0
     Comment_issue:
