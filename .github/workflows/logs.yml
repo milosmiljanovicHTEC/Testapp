@@ -6,6 +6,9 @@ on:
       days_old: 
        type: number
        required: true
+    secrets:
+      token:
+        required: true  
   workflow_dispatch:
     inputs:
       days_old:
