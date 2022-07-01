@@ -10,6 +10,7 @@ jobs:
       uses: milosmiljanovic/Testapp/.github/workflows/logs.yml@main
       with:
        days_old: 0
+       required: true
     Comment_issue:
       runs-on: ubuntu-latest
       steps:
