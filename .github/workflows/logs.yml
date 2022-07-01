@@ -5,8 +5,6 @@ on:
     inputs:
       days_old: 
        type: number
-       description: "The amount of days old to delete"
-       default: 0
        required: true
   workflow_dispatch:
     inputs:
