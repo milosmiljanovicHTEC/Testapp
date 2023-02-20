@@ -1,8 +1,8 @@
 name: Daily Workflow
 
-on:
-  schedule:
-    - cron: '* * * * *'  # Runs every day at midnight UTC
+# on:
+#   schedule:
+#     - cron: '* * * * *'  # Runs every day at midnight UTC
 
 jobs:
   build:
